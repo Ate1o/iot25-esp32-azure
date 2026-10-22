@@ -1,7 +1,7 @@
 """Azure consumer: prints telemetry from IoT Hub in real time (the hub's Event Hub-compatible endpoint).
 
   set EVENTHUB_CONNECTION_STRING=<IoT Hub > Built-in endpoints > Event Hub-compatible endpoint>
-  py -3 tools\\azure_consumer.py
+  python consumer/azure_consumer.py
 """
 import json
 import os
