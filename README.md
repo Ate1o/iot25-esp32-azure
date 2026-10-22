@@ -3,13 +3,13 @@
 ESP32 sensor nodes publish telemetry over MQTT to Mosquitto on a Raspberry Pi. A gateway on the Pi forwards it to Azure IoT Hub, and a consumer reads it back from Azure.
 
 ```
-ESP32 + DHT11 (x2) -> Mosquitto (Raspberry Pi) -> gateway -> Azure IoT Hub -> Azure consumer
+ESP32 + DHT11 (x2) > Mosquitto (Raspberry Pi) > gateway > Azure IoT Hub > Azure consumer
 ```
 
 ## Parts
 | Folder | What |
 |---|---|
-| `esp32/sensor_node` | ESP32 sketch: DHT11 temperature + humidity -> MQTT (`iot25/<deviceId>/telemetry`) |
+| `esp32/sensor_node` | ESP32 sketch: DHT11 temperature + humidity > MQTT (`iot25/<deviceId>/telemetry`) |
 | `gateway` | Python gateway on the Pi: MQTT in, Azure IoT Hub out. Also prints every MQTT message (local consumer) |
 | `consumer` | Azure consumer: reads the IoT Hub's Event Hub-compatible endpoint and shows each device's values live |
 
