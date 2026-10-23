@@ -1,0 +1,15 @@
+[Unit]
+Description=IOT25 MQTT to Azure IoT Hub gateway
+Wants=network-online.target mosquitto.service
+After=network-online.target mosquitto.service
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/iot25
+EnvironmentFile=/home/pi/iot25/gateway.env
+ExecStart=/home/pi/iot25/.venv/bin/python /home/pi/iot25/gateway.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
